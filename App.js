@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
   return (
-    <View>
+    <View style={{padding: 30}}>
       <View>
         <TextInput />
         <Button title='Add Goal' />
