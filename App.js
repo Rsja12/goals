@@ -18,7 +18,10 @@ export default function App() {
   };
 
   const handleAddButton = () => {
-    setAllGoals((preveState) => [...preveState, goal]);
+    setAllGoals((preveState) => [
+      ...preveState,
+      { key: Math.random().toString(), text: goal },
+    ]);
   };
 
   return (
@@ -39,7 +42,7 @@ export default function App() {
         data={allGoals}
         renderItem={(itemData) => (
           <View style={styles.listItem}>
-            <Text>{itemData.item}</Text>
+            <Text>{itemData.item.text}</Text>
           </View>
         )}
       />
