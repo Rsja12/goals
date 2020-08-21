@@ -9,7 +9,7 @@ const GoalInput = ({ handleAdd }) => {
   };
 
   return (
-    <View style={styles.inputContainer}>
+    <View style={styles.inputContainer} on>
       <TextInput
         placeholder="Enter your goal"
         style={styles.input}
@@ -34,5 +34,5 @@ const styles = StyleSheet.create({
     borderBottomColor: "black",
     borderWidth: 1,
     padding: 10,
-  }
+  },
 });

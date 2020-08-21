@@ -22,6 +22,12 @@ export default function App() {
     ]);
   };
 
+  const handleDelete = id => {
+    setAllGoals(prevState => {
+      return prevState.filter(goal => goal.key !== id)
+    })
+  }
+
   return (
     <View style={styles.screen}>
       <StatusBar style="auto" />
@@ -30,7 +36,7 @@ export default function App() {
       <FlatList
         data={allGoals}
         renderItem={(itemData) => (
-          <GoalItem item={itemData.item.text} />
+          <GoalItem item={itemData.item} handleDelete={handleDelete} />
         )}
       />
     </View>
@@ -42,5 +48,3 @@ const styles = StyleSheet.create({
     padding: 50,
   }
 });
-
-// test
