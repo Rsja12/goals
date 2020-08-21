@@ -12,8 +12,9 @@ export default function App() {
   const handleAddButton = (goalText) => {
     setAllGoals((prevState) => [
       ...prevState,
-      { key: Math.random().toString(), text: goalText },
+      { key: Math.random().toString(), text: goalText }
     ]);
+    setIsModalVisible(false);
   };
 
   const handleDelete = (id) => {
