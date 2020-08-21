@@ -10,7 +10,7 @@ const GoalInput = ({ handleAdd, isVisible }) => {
 
   return (
     <Modal visible={isVisible} animationType="slide">
-      <View style={styles.inputContainer} on>
+      <View style={styles.inputContainer}>
         <TextInput
           placeholder="Enter your goal"
           style={styles.input}
@@ -27,14 +27,16 @@ export default GoalInput;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignContent: "center",
+    flex: 1,
+    flexDirection: "column",
   },
   input: {
     width: "80%",
+    alignSelf: "center",
     borderBottomColor: "black",
-    borderWidth: 1,
+    borderBottomWidth: 1,
     padding: 10,
+    marginBottom: 10,
+    marginTop: 50,
   },
 });
