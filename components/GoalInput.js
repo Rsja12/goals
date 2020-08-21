@@ -21,6 +21,8 @@ const GoalInput = ({ handleAdd }) => {
   );
 };
 
+
+
 export default GoalInput;
 
 const styles = StyleSheet.create({
