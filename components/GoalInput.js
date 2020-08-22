@@ -22,8 +22,10 @@ const GoalInput = ({ handleAdd, handleCancel, isVisible }) => {
           onChangeText={onInput}
           value={goal}
         />
-        <Button title="Add" onPress={(onAddBtnPress)} />
-        <Button title="Cancel" color="red" onPress={handleCancel} />
+        <View style={styles.buttonContainer}>
+          <Button title="Add" onPress={onAddBtnPress} />
+          <Button title="Cancel" color="red" onPress={handleCancel} />
+        </View>
       </View>
     </Modal>
   );
@@ -45,4 +47,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: "40%",
   },
+  buttonContainer: {
+    flexDirection: "row-reverse",
+    justifyContent: "space-evenly"
+  }
 });
