@@ -4,9 +4,14 @@ import { StyleSheet, View, TextInput, Button, Modal } from "react-native";
 const GoalInput = ({ handleAdd, isVisible }) => {
   const [goal, setGoal] = useState("");
 
-  const handleInput = (input) => {
+  const onInput = (input) => {
     setGoal(input);
   };
+
+  const onAddBtnPress = () => {
+    handleAdd(goal);
+    setGoal('');
+  }
 
   return (
     <Modal visible={isVisible} animationType="slide">
@@ -14,10 +19,10 @@ const GoalInput = ({ handleAdd, isVisible }) => {
         <TextInput
           placeholder="Enter your goal"
           style={styles.input}
-          onChangeText={handleInput}
+          onChangeText={onInput}
           value={goal}
         />
-        <Button title="Add" onPress={() => handleAdd(goal)} />
+        <Button title="Add" onPress={onAddBtnPress} />
       </View>
     </Modal>
   );
