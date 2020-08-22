@@ -17,6 +17,10 @@ export default function App() {
     setIsModalVisible(false);
   };
 
+  const handleCancelButton = () => {
+    setIsModalVisible(false);
+  };
+
   const handleDelete = (id) => {
     setAllGoals((prevState) => {
       return prevState.filter((goal) => goal.key !== id);
@@ -28,7 +32,11 @@ export default function App() {
       <StatusBar style="auto" />
 
       <Button title="Add A New Goal!" onPress={() => setIsModalVisible(true)} />
-      <GoalInput isVisible={isModalVisible} handleAdd={handleAddButton} />
+      <GoalInput
+        isVisible={isModalVisible}
+        handleAdd={handleAddButton}
+        handleCancel={handleCancelButton}
+      />
       <FlatList
         data={allGoals}
         renderItem={(itemData) => (
