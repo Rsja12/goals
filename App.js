@@ -8,14 +8,17 @@ import GoalInput from "./components/GoalInput";
 export default function App() {
   const [allGoals, setAllGoals] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  console.log(allGoals)
 
   const handleAddButton = (goalText) => {
+    if (goalText.length === 0) return;
+
     setAllGoals((prevState) => [
       ...prevState,
       { key: Math.random().toString(), text: goalText },
     ]);
     setIsModalVisible(false);
-  };
+  };  
 
   const handleCancelButton = () => {
     setIsModalVisible(false);
